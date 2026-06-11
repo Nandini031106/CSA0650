@@ -1,0 +1,7 @@
+arr = [5,3,8,1]
+
+if arr:
+    arr.sort()
+    print(arr[-1])
+else:
+    print("Empty List")
