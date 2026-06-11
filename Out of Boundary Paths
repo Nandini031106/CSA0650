@@ -1,0 +1,20 @@
+def findPaths(m, n, N, i, j):
+    dp = {(i, j): 1}
+    count = 0
+
+    for _ in range(N):
+        temp = {}
+        for (r, c), val in dp.items():
+            for dr, dc in [(1,0),(-1,0),(0,1),(0,-1)]:
+                nr, nc = r+dr, c+dc
+
+                if nr < 0 or nr >= m or nc < 0 or nc >= n:
+                    count += val
+                else:
+                    temp[(nr,nc)] = temp.get((nr,nc),0)+val
+
+        dp = temp
+
+    return count
+
+print(findPaths(2,2,2,0,0))
