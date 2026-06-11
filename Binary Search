@@ -1,0 +1,18 @@
+arr = sorted([3,4,6,-9,10,8,9,30])
+key = 10
+
+low = 0
+high = len(arr)-1
+
+while low <= high:
+    mid = (low + high)//2
+
+    if arr[mid] == key:
+        print("Found at position", mid+1)
+        break
+    elif arr[mid] < key:
+        low = mid + 1
+    else:
+        high = mid - 1
+else:
+    print("Not Found")
